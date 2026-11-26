@@ -2,14 +2,14 @@ extends CharacterBody3D
 
 const SPEED = 2
 const SPRINT_SPEED = 6
-const JUMP_VELOCITY = 4
+const JUMP_VELOCITY = 6
 var sens = 0.002
 
 @onready var head = $Node3D
 @onready var camera = $Node3D/Camera3D
 
-const FOV_BASE = 100.0
-const FOV_SPRINT = 110.0
+const FOV_BASE = 90.0
+const FOV_SPRINT = 100.0
 const FOV_LERP_SPEED = 8.0
 
 const BOB_FREQ = 3

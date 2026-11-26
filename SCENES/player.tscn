@@ -3,12 +3,29 @@
 [ext_resource type="Script" uid="uid://2ynsynodcfc3" path="res://SCRIPTS/player.gd" id="1_85nbx"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_g4v7s"]
-radius = 0.39746094
-height = 1.7231445
+radius = 0.4
+height = 1.8
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
 radius = 0.40429688
 height = 1.7177734
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ai16o"]
+
+[sub_resource type="Sky" id="Sky_85nbx"]
+sky_material = SubResource("ProceduralSkyMaterial_ai16o")
+
+[sub_resource type="Environment" id="Environment_85nbx"]
+background_mode = 2
+sky = SubResource("Sky_85nbx")
+tonemap_mode = 4
+ssao_enabled = true
+ssil_enabled = true
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_pd21d"]
+auto_exposure_enabled = true
+dof_blur_near_distance = 0.75
+dof_blur_amount = 0.25
 
 [node name="Player" type="CharacterBody3D" unique_id=873943897]
 script = ExtResource("1_85nbx")
@@ -26,6 +43,9 @@ shape = SubResource("CapsuleShape3D_g4v7s")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6470158, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=2006516437]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.37687588, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.37687588, -0.3060357)
+environment = SubResource("Environment_85nbx")
+attributes = SubResource("CameraAttributesPractical_pd21d")
 current = true
 fov = 73.35796
+far = 100.0
