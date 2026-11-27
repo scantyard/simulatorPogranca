@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cips2eunqgrvg"]
 
 [ext_resource type="Script" uid="uid://2ynsynodcfc3" path="res://SCRIPTS/player.gd" id="1_85nbx"]
+[ext_resource type="Script" uid="uid://bjudk4ebcdooy" path="res://SCRIPTS/inspect_controller.gd" id="2_ai16o"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_g4v7s"]
 radius = 0.4
@@ -49,6 +50,13 @@ current = true
 fov = 73.35796
 far = 100.0
 
+[node name="Marker3D" type="Marker3D" parent="Node3D/Camera3D" unique_id=264409663]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5)
+
+[node name="RayCast3D" type="RayCast3D" parent="Node3D/Camera3D" unique_id=607348675]
+target_position = Vector3(0, 0, -1.5)
+collide_with_areas = true
+
 [node name="Control" type="Control" parent="Node3D" unique_id=1935796194]
 layout_mode = 3
 anchors_preset = 15
@@ -73,3 +81,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 32
 text = "."
+
+[node name="InspectController" type="Node3D" parent="." unique_id=1876777620]
+script = ExtResource("2_ai16o")
